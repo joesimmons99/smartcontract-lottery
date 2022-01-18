@@ -6,8 +6,8 @@
     "tests/test_lottery.py": {
       "coverage": false,
       "isolated": false,
-      "results": "F",
-      "sha1": "71430481b146367bb92169a0900f994494dd2cf8",
+      "results": ".",
+      "sha1": "b847189f5194a494839f8237812ded53808504b3",
       "txhash": []
     }
   },
