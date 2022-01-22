@@ -15,7 +15,13 @@ def deploy_lottery():
     )
     print("Deployed lottery!")
 
-
+def start_lottery():
+    account = get_account()
+    lottery = Lottery[-1]
+    starting_tx = lottery.startLottery({"from": account})
+    starting_tx.wait(1) # Wait for the tx to be mined. If you don't include this, you may get an error.
+    print("Started lottery!")
 
 def main():
     deploy_lottery()
+    start_lottery()
