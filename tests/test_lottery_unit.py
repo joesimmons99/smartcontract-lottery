@@ -1,5 +1,5 @@
 
-from scripts.helpful_scripts import LOCAL_BLOCKCHAIN_ENVIRONMENTS, get_account
+from scripts.helpful_scripts import LOCAL_BLOCKCHAIN_ENVIRONMENTS, fund_with_link, get_account
 from brownie import Lottery, accounts, config, network, exceptions
 from scripts.deploy_lottery import deploy_lottery
 from web3 import Web3
@@ -37,3 +37,14 @@ def test_can_start_and_enter_lottery():
         lottery.startLottery({"from": account})
         lottery.enter({"from": account, "value": lottery.getEntranceFee()})
         assert lottery.players(0) == account
+
+def test_can_end_lottery():
+        if network.show_active() not in LOCAL_BLOCKCHAIN_ENVIRONMENTS:
+                pytest.skip()
+        lottery = deploy_lottery()      
+        account = get_account()
+        lottery.startLottery({"from": account})  
+        lottery.enter({"from": account, "value": lottery.getEntranceFee()})
+        fund_with_link(lottery)
+        lottery.endLottery({"from": account})
+        assert lottery.lottery_state() == 2
