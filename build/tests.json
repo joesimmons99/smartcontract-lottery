@@ -13,8 +13,8 @@
     "tests/test_lottery_unit.py": {
       "coverage": false,
       "isolated": false,
-      "results": ".",
-      "sha1": "0008a469168836fb1679c36fcff67d47243407fa",
+      "results": "ss.",
+      "sha1": "914e445641623aff39c66c6120efc5e3411d7679",
       "txhash": []
     }
   },
