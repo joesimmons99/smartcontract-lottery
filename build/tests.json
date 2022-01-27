@@ -14,7 +14,7 @@
       "coverage": false,
       "isolated": false,
       "results": "F",
-      "sha1": "41d7ae438ea785d262fc3fee65f54f3256ef7b44",
+      "sha1": "648d37b678e5a8705e28261377bf034450d58201",
       "txhash": []
     },
     "tests/test_lottery_unit.py": {

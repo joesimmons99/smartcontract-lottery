@@ -1,9 +1,8 @@
 
 
-from scripts.helpful_scripts import LOCAL_BLOCKCHAIN_ENVIRONMENTS, fund_with_link
 from brownie import network
 import pytest
-from scripts.helpful_scripts import LOCAL_BLOCKCHAIN_ENVIRONMENTS, get_account, fund_with_link
+from scripts.helpful_scripts import (LOCAL_BLOCKCHAIN_ENVIRONMENTS, get_account, fund_with_link,)
 from scripts.deploy_lottery import deploy_lottery
 import time
 
@@ -18,5 +17,5 @@ def test_can_pick_winner():
     fund_with_link(lottery)
     lottery.endLottery({"from": account})
     time.sleep(60)
-    assert lottery.recentWinner == account
+    assert lottery.recentWinner() == account
     assert lottery.balance == 0
